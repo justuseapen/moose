@@ -64,6 +64,14 @@ module Moose
 
     private
 
+    def run_environment
+      browser && browser.run_environment
+    end
+
+    def moose_run
+      browser && browser.moose_run
+    end
+
     def build_methods_from(initial_attributes)
       self.class.initial_attributes_memo.each do |attribute|
         if attribute.is_a?(Symbol)
